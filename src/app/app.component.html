@@ -1,0 +1,47 @@
+<mat-tab-group (selectedTabChange)="tabChange($event)" (focusChange)="fChange($event)"> 
+  <mat-tab label="First"> 
+  <ngx-codemirror
+  (focusChange)="focus($event)"
+  (ngModelChange)="handleChange($event)"
+  [autoFocus]="isFocus"
+  [(ngModel)]="content"
+  [autoFocus]="true"
+    [options]="{
+      lineNumbers: true,
+      theme: 'material',
+      mode: 'markdown'
+    }"
+  ></ngx-codemirror>  
+  </mat-tab>
+  <mat-tab label="Second"> 
+  <ngx-codemirror
+  (focusChange)="focus($event)"
+  (ngModelChange)="handleChange($event)"
+  [autoFocus]="isFocus"
+  [(ngModel)]="contentTwo"
+  [autoFocus]="true"
+    [options]="{
+      lineNumbers: true,
+      theme: 'material',
+      mode: 'markdown'
+    }"
+  ></ngx-codemirror>  
+  </mat-tab>
+  <mat-tab label="Third"> 
+    <div id="tide">
+      <ngx-codemirror
+      (click)="eventIt($event)" 
+      (focusChange)="focus($event)"
+      (ngModelChange)="handleChange($event)"
+      [autoFocus]="isFocus"
+      [(ngModel)]="contentThree"
+      [autoFocus]="true"
+        [options]="{
+          lineNumbers: true,
+          theme: 'material',
+          mode: 'markdown'
+        }"
+      ></ngx-codemirror>  
+    </div>
+  </mat-tab>
+</mat-tab-group>
